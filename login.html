@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
+    <title>Sistema de Gerenciamento de Tarefas</title>
+</head>
+
+<body>
+    <header>
+        <div class="inicio">
+            <img src="./img/logo.png" alt="Logo">
+            <p>GERENCIAMENTO DE TAREFAS</p>
+        </div>
+    </header>
+
+    <!--Login-->
+    <main>  
+        <div class="titulo">
+            <h2>Mantenha uma organização com eficiência para gerenciar suas tarefas</h2>
+
+        </div>
+
+        <div class="formulario">
+
+            <div class="comecar">
+                <p>INICIAR SESSÃO</p>
+            </div>
+
+            <form action="" method="GET">
+
+                <div class="email">
+
+                    <input id="email" type="email" placeholder="Digite seu email...">
+
+                </div>
+
+                <div class="senha">
+                    <input id="senha" type="password" placeholder="Digite sua senha...">
+                </div>
+
+            </form>
+
+            <!--Botão para entrar com login-->
+            <div class="entrar">
+                <button onclick="validarLogin()">ENTRAR</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <!--Botão para criar uma conta e direcionar para a tela criar conta  -->
+        <p>Ainda não possui uma conta?</p>
+        <button>
+            <a href="./index.html">CADASTRAR</a>
+        </button>
+    </footer>
+
+</body>
+</html>

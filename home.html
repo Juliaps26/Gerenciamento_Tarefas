@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Sistema de Gerenciamento de Tarefas</title>
+    <script src="home.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/logo.png" alt="Logo">
+        <p>GERENCIAMENTO DE TAREFAS</p>
+    </header>
+
+    <main>
+
+
+        <!--Botão para adicionar nova tarefa -->
+        <button id="mostrarCard" class="nova-tarefa">
+            <span>Nova Tarefa</span>
+        </button>
+
+        <div class="card" id="card">
+
+
+            <button id="fechar-card" class="fechar-card">
+                <img src="./img/close-x-svgrepo-com.svg" alt="">
+            </button>
+
+            <h2>Adicionar nova Tarefa</h2>
+
+            <form>
+
+                <!-- Nome da tarefa -->
+                <label for="titulo">
+                    <p>Título</p>
+                    <input type="text" placeholder="nome da tarefa" id="titulo" required class="w-full" value>
+                </label>
+
+                <!-- Data da tarefa-->
+                <label for="data">
+                    <p>Data</p>
+                    <input type="date" class="w-full" required id="data" min="2024-02-15" max="2025-02-15" value="2024-02-15">
+                </label>
+
+                <!-- Desscrição da tarefa -->
+                <label for="desc">
+                    <p>Descrição (opcional)</p>
+                    <textarea placeholder="descreva sua tarefa" id="desc" class="w-full"></textarea>
+                </label>
+
+                <!-- Botão para criar nova tarefa -->
+                <button type="submit" class="btn-criar" id="button">Criar tarefa nova</button>
+
+            </form>
+
+        </div>
+
+        <!-- Container das tarefas  -->
+        <div class="container" id="cards">
+    
+        </div>
+
+    </main>
+
+</body>
+</html>

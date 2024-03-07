@@ -4,7 +4,8 @@
         "id": 1,
         "nome": "João da Silva",
         "email": " joao@silva.com",
-        "senha": "joao"
+        "senha": "joao",
+        "premium": "true"
       },
       {
         "id": 2,

@@ -8,29 +8,14 @@ document.getElementById('fechar-card').addEventListener('click', function () {
     document.getElementById('card').style.display = 'none';
 });
 
+
 const button = document.getElementById('button')
 const containerCards = document.getElementById('cards')
 
 
-
-// Array de tarefas para teste (o array certo virá da api)
-let tarefas = [
-
-    // JSON com uma tarefa
-    {
-        titulo: 'Teste',
-        descricao: 'Tarefa teste',
-
-        // Formato de data certo  'ano-mes-dia' 
-        dataConclusao: '2024-02-15'
-    }
-
-]
-
 // Função para obter as tarefas da API
 async function getTarefas() {
 
-    try {
 
         // Verificar a URL certa !!!
         let url = 'http://localhost:5080/tarefas'
@@ -49,11 +34,12 @@ async function getTarefas() {
             container.className = 'cards';
 
             container.innerHTML = `
-                <h2>${tarefa.titulo}</h2>
-                <span>${tarefa.descrição}</span>
+    
+                <h2>${tarefa.descrição}</h2>
                 <p>${tarefa.dataConclusão}</p>
-                <input type="checkbox" id="checkbox-${tarefa.id}">
-    <label for="checkbox-${tarefa.id}">Concluído</label>
+                <button class="btn-comentar" id="btn-comentar-${tarefa.id}" onclick="verTarefa(${tarefa.id})">Ver Tarefa</button>
+            
+                
                 
             `
 
@@ -61,30 +47,41 @@ async function getTarefas() {
 
         })    
 
-    } catch (error) {
-        
-    }
-    
 }
+function verTarefa (idTarefa){
+
+    localStorage.setItem('idTarefa', idTarefa)
+   
+    window.location.href = './verTarefa.html';
+}
+
+
+function excluirTarefa (button){
+    var li = button.parentNode;
+    li.parentNode.removeChild(li)
+}
+
 
 async function addCard() {
 
     // Recebendo os dados digitados
-    const titulo = document.getElementById('titulo').value
+
     const data = document.getElementById('data').value
-    const descricao = document.getElementById('desc').value
+    const descricao = document.getElementById('titulo').value
+    // const comentario = document.getElementById('comentario').value
 
     // Se as informações estiverem vazias, não iremos criar o card
-    if(titulo == '' || data == '', descricao == ''){
+    if(data === '', descricao === ''){
 
         // Criando uma caixa de alerta, avisando ao usuário para preencher todas as informações
         alert('Preencha todas as informações')
 
     } else {
 
+        alert("Tarefa criada!!")
+
         // Criando um objeto card com os dados inseridos
         const novoCard = {
-            titulo: titulo,
             dataConclusão: data,
             descrição: descricao
         }
@@ -108,11 +105,12 @@ async function addCard() {
             console.error(error)
         }
     
-        containerCards.innerHTML = '';
-        await getTarefas();
-        window.onload = () => {
-            getTarefas()
-        }
+        // containerCards.innerHTML = '';
+        // await getTarefas();
+        // window.onload = () => {
+        //     getTarefas()
+        //     getComentarios()
+        // }
 
     }
 
@@ -126,4 +124,5 @@ button.addEventListener('click', addCard);
 
 window.onload = () => {
     getTarefas()
+    // getComentarios()
 }

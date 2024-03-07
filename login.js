@@ -1,7 +1,7 @@
 async function validarLogin(){
 
     const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value; 
+    const senha = document.getElementById('password').value; 
 
     console.log(email);
         
@@ -19,6 +19,8 @@ async function validarLogin(){
         listUsers.forEach((user) => {
             if(email === user.email && senha === user.senha){
                 alert('Usuário Logado com Sucesso !!');
+                localStorage.setItem('idUser', user.id)
+
                 window.location.href = './home.html'
                 return true;
             }

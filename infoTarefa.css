@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: rgb(188, 235, 253);
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+header{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    height: 10vh;
+}
+
+header p{
+    font-size: 3vh;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+header img{
+    width: 7vh;
+    height: 7vh;
+    padding: 1.5vh 3vh;
+}
+
+
+
+.titulo{
+    height: 30%;
+}
+
+.hello {
+    font-size: 50px;
+    color: aliceblue;
+    font-family: fantasy;
+    margin: 20px;
+}
+
+h2{
+    color: aliceblue;
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container {
+    width: 90vw;
+    height: 80%;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    color: aliceblue;
+    font-size: 50px;
+    text-align: center;
+}
+
+.comentarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comentarios p {
+    background: none;
+    font-size: 35px;
+    border: dashed rgb(255, 255, 255) 2px;
+    height: 50px;
+    width: 30%;
+    color: rgb(214, 214, 214);
+}
+
+.newComentario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+input {
+    height: 50px;
+    width: 80%;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button{
+    height: 40px;
+    width: 15%;
+    align-items: center;
+    text-align: center;
+}
+
+
+/*  Botão para sair  */
+.sair{
+  border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-width: 1px;
+    margin-top: 10px;
+}
+.sair img{
+    width: 20px;
+}
+
+.comentario{
+    background-color: rgb(107, 235, 107);
+    margin: 10px;
+}
